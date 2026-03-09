@@ -28,7 +28,7 @@ jobs:
         run: npm run build
 
       - name: Add CNAME
-        run: echo "sport-family.itkamianets.com" > dist/sport-family-site/browser/CNAME
+        run: echo "sport-family.itkamianets.com" > CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
