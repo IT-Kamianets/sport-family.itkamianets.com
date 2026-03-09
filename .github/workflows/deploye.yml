@@ -31,13 +31,7 @@ jobs:
         run: ls -R dist/
 
       - name: Add CNAME
-        run: |
-          # Перевіряємо обидва можливі шляхи (з /browser і без)
-          if [ -d "dist/sport-family-site/browser" ]; then
-            echo "sport-family.itkamianets.com" > dist/sport-family-site/browser/CNAME
-          else
-            echo "sport-family.itkamianets.com" > dist/sport-family-site/CNAME
-          fi
+        run: echo "sport-family.itkamianets.com" > dist/sport-family-site/browser/CNAME
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
