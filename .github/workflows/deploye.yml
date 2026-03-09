@@ -27,12 +27,22 @@ jobs:
       - name: Build Angular app
         run: npm run build
 
+      - name: Check build output
+        run: ls -R dist/
+
       - name: Add CNAME
-        run: echo "sport-family.itkamianets.com" > dist/sport-family-site/browser/CNAME
+        run: |
+          # Перевіряємо обидва можливі шляхи (з /browser і без)
+          if [ -d "dist/sport-family-site/browser" ]; then
+            echo "sport-family.itkamianets.com" > dist/sport-family-site/browser/CNAME
+          else
+            echo "sport-family.itkamianets.com" > dist/sport-family-site/CNAME
+          fi
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/sport-family-site/browser
+          # Визначаємо папку автоматично
+          folder: ${{ hashFiles('dist/sport-family-site/browser/index.html') != '' && 'dist/sport-family-site/browser' || 'dist/sport-family-site' }}
           branch: gh-pages
           clean: true
