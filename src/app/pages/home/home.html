@@ -1,0 +1,91 @@
+<section class="hero is-medium is-bold" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/gym_hero.jpg') center/cover;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 has-text-orange">
+        {{ content[lang()].title }}
+      </h1>
+      <h2 class="subtitle">
+        {{ content[lang()].subtitle }}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-10">
+        <div class="box has-text-centered" style="background: transparent !important; border: none;">
+          <h2 class="title is-2 has-text-orange">{{ content[lang()].aboutTitle }}</h2>
+          <p class="is-size-4 has-text-white mb-5">
+            {{ content[lang()].aboutDescription }}
+          </p>
+          <div class="buttons is-centered">
+            <a routerLink="/gym" class="button is-orange is-large">{{ content[lang()].gymBtn }}</a>
+            <a routerLink="/phyto-bar" class="button is-outlined is-warning is-large">{{ content[lang()].phytoBtn }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Unified Memberships and Schedule Block -->
+<section class="section" style="background-color: #080808; border-top: 1px solid #222; border-bottom: 1px solid #222;">
+  <div class="container">
+    <div class="columns is-variable is-8">
+      
+      <!-- Memberships Column -->
+      <div class="column is-7">
+        <h2 class="title is-3 has-text-orange mb-5">{{ content[lang()].pricingTitle }}</h2>
+        <div class="box" style="background: #111 !important; border: 1px solid #333;">
+          <table class="table is-fullwidth" style="background: transparent !important; color: white !important;">
+            <tbody>
+              <tr *ngFor="let item of content[lang()].prices">
+                <td class="is-size-5 has-text-white" style="border-bottom: 1px solid #222; padding: 1rem 0;">{{ item.name }}</td>
+                <td class="is-size-4 has-text-orange has-text-weight-bold" style="border-bottom: 1px solid #222; padding: 1rem 0; text-align: right;">{{ item.price }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="has-text-warning mt-4 is-italic is-size-6">{{ content[lang()].specialOffer }}</p>
+        </div>
+      </div>
+
+      <!-- Schedule Column -->
+      <div class="column is-5">
+        <h2 class="title is-3 has-text-orange mb-5 has-text-centered">{{ content[lang()].scheduleTitle }}</h2>
+        <div class="box has-text-centered" style="background: #111 !important; border: 1px solid #333; height: calc(100% - 3.5rem);">
+          <div class="mb-5">
+            <h3 class="title is-5 has-text-orange mb-1">{{ content[lang()].days.weekdays }}</h3>
+            <p class="is-size-3 has-text-white">08:00 – 21:00</p>
+          </div>
+          <div class="mb-5">
+            <h3 class="title is-5 has-text-orange mb-1">{{ content[lang()].days.saturday }}</h3>
+            <p class="is-size-3 has-text-white">10:00 – 20:00</p>
+          </div>
+          <div>
+            <h3 class="title is-5 has-text-orange mb-1">{{ content[lang()].days.sunday }}</h3>
+            <p class="is-size-3 has-text-white">10:00 – 18:00</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Grid -->
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-3" *ngFor="let i of galleryImages">
+         <figure class="image is-square">
+           <img [src]="'/assets/instagram/insta_' + i + '.jpg'" 
+                style="border-radius: 8px; filter: grayscale(20%); object-fit: cover;"
+                onerror="this.parentElement.parentElement.style.display='none'">
+         </figure>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,71 @@
+<section class="hero is-small is-dark" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/training.jpg') center/cover;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 has-text-orange">{{ content[lang()].title }}</h1>
+      <h2 class="subtitle">{{ content[lang()].subtitle }}</h2>
+    </div>
+  </div>
+</section>
+
+<!-- Instructors Section with Optimized Photos -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered has-text-orange mb-6">{{ content[lang()].instructorsTitle }}</h2>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-4" *ngFor="let coach of content[lang()].instructors">
+        <div class="card" style="height: 100%; border: none; border-bottom: 3px solid var(--primary-orange); background: #111 !important; overflow: hidden; box-shadow: none; display: flex; flex-direction: column;">
+          <div class="card-image" style="line-height: 0; margin: 0; padding: 0; background: transparent;">
+            <img [src]="coach.image" [alt]="coach.name" style="width: 100%; height: 500px; object-fit: cover; object-position: top; display: block; border: none;">
+          </div>
+          <div class="card-content has-text-centered" style="padding: 1.5rem 1rem; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <h3 class="title is-4 mb-1 has-text-orange">{{ coach.name }}</h3>
+            <p class="is-size-6 has-text-white mb-3">{{ coach.role }}</p>
+            <a [href]="'https://www.instagram.com/' + coach.handle + '/'" target="_blank" class="button is-orange is-fullwidth is-small">
+              <span class="icon"><i class="fab fa-instagram"></i></span>
+              <span>{{ content[lang()].directBtn }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background-color: #080808;">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered has-text-orange mb-6">{{ content[lang()].zonesTitle }}</h2>
+    <div class="columns is-multiline">
+      <div class="column is-6" *ngFor="let zone of content[lang()].zones">
+        <div class="box p-5" style="height: 100%; border-top: 4px solid var(--primary-orange)">
+          <div class="is-flex is-align-items-center mb-4">
+            <span class="icon is-large has-text-orange mr-3">
+              <i [class]="zone.icon + ' fa-2x'"></i>
+            </span>
+            <h3 class="title is-4 mb-0">{{ zone.name }}</h3>
+          </div>
+          <p class="is-size-5 has-text-grey-light">{{ zone.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered has-text-orange">{{ content[lang()].groupClassesTitle }}</h2>
+    <p class="subtitle has-text-centered mb-6 has-text-grey-light">{{ content[lang()].groupClassesDesc }}</p>
+    <div class="columns is-multiline">
+      <div class="column is-6" *ngFor="let cls of content[lang()].groupClasses">
+        <div class="box p-5" style="height: 100%; border-left: 4px solid var(--primary-orange); background: #111 !important;">
+          <div class="is-flex is-align-items-center mb-3">
+            <span class="icon is-medium has-text-orange mr-3">
+              <i [class]="cls.icon + ' fa-lg'"></i>
+            </span>
+            <h3 class="title is-4 mb-0 has-text-orange">{{ cls.name }}</h3>
+          </div>
+          <p class="is-size-5 has-text-white">{{ cls.desc }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

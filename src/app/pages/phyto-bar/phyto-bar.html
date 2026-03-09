@@ -1,0 +1,80 @@
+<section class="hero is-medium is-dark" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/phyto_bar.jpg') center/cover;">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1 has-text-orange">{{ content[lang()].title }}</h1>
+      <h2 class="subtitle">{{ content[lang()].subtitle }}</h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-7">
+        <h2 class="title is-3 has-text-orange">{{ content[lang()].aboutTitle }}</h2>
+        <p class="is-size-5 has-text-grey-light">{{ content[lang()].aboutDesc }}</p>
+      </div>
+      <div class="column is-5">
+        <figure class="image is-4by3">
+          <img src="/assets/phyto/phyto_0.jpg" alt="Sport nutrition" 
+               style="border-radius: 12px; border: 2px solid var(--primary-orange); object-fit: cover;"
+               onerror="this.src='/assets/phyto_bar.jpg'">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU BLOCK (Тепер вище) -->
+<section class="section" style="background-color: #080808;">
+  <div class="container">
+    <h2 class="title is-3 has-text-centered has-text-orange mb-6">{{ content[lang()].menuTitle }}</h2>
+    <div class="columns is-multiline">
+      <div class="column is-6" *ngFor="let cat of content[lang()].categories">
+        <div class="box p-5" style="height: 100%; border-left: 5px solid var(--primary-orange);">
+          <div class="is-flex is-align-items-center mb-4">
+            <span class="icon is-large has-text-orange mr-3">
+              <i [class]="cat.icon + ' fa-2x'"></i>
+            </span>
+            <h3 class="title is-4 mb-0">{{ cat.name }}</h3>
+          </div>
+          <hr style="background-color: #333; margin: 0.5rem 0 1rem 0;">
+          <ul>
+            <li *ngFor="let item of cat.items" class="mb-3">
+              <p class="is-size-5 has-text-orange mb-0">{{ item.name }}</p>
+              <p class="is-size-6 has-text-grey">{{ item.desc }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY BLOCK (Тепер нижче) -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-3 has-text-orange mb-5">{{ content[lang()].galleryTitle }}</h2>
+    <div class="columns is-multiline">
+      <div class="column is-3" *ngFor="let i of galleryImages">
+         <figure class="image is-square">
+           <img [src]="'/assets/phyto/phyto_' + i + '.jpg'" 
+                style="border-radius: 8px; filter: grayscale(10%); object-fit: cover;"
+                onerror="this.parentElement.parentElement.style.display='none'">
+         </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="box has-text-centered p-6" style="background: linear-gradient(135deg, #1a1a1a, #000); border: 1px solid var(--primary-orange);">
+      <h2 class="title is-3 has-text-orange">{{ content[lang()].recoveryTitle }}</h2>
+      <p class="is-size-5">{{ content[lang()].recoveryDesc }}</p>
+      <div class="mt-5">
+        <i class="fas fa-heartbeat fa-3x has-text-orange"></i>
+      </div>
+    </div>
+  </div>
+</section>

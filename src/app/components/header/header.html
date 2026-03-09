@@ -1,0 +1,45 @@
+<!-- ВЕРХНЯ ПАНЕЛЬ (Єдина для всього) -->
+<header class="top-bar">
+  <div class="top-bar-content">
+    <!-- Логотип (Зліва) -->
+    <a routerLink="/" class="logo" (click)="isActive = false">
+      <strong>SPORT FAMILY</strong>
+    </a>
+    
+    <!-- ДЕСКТОПНЕ МЕНЮ (По центру/Поруч з лого) -->
+    <nav class="desktop-nav is-hidden-touch">
+      <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">{{ labels[lang()].home }}</a>
+      <a routerLink="/gym" routerLinkActive="is-active">{{ labels[lang()].gym }}</a>
+      <a routerLink="/phyto-bar" routerLinkActive="is-active">{{ labels[lang()].phytoBar }}</a>
+      <a routerLink="/contact" routerLinkActive="is-active">{{ labels[lang()].contact }}</a>
+    </nav>
+
+    <!-- Кнопки дій (Справа) -->
+    <div class="top-bar-actions">
+      <!-- Залишаємо тільки перемикач мови -->
+      <button class="action-btn lang-btn" (click)="settings.toggleLang()">
+        {{ settings.lang() === 'ua' ? 'EN' : 'UA' }}
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- МОБІЛЬНА НИЖНЯ ПАНЕЛЬ (Тільки для телефонів) -->
+<nav class="mobile-bottom-nav is-hidden-desktop">
+  <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact: true}">
+    <span class="icon"><i class="fas fa-home"></i></span>
+    <span>{{ labels[lang()].home }}</span>
+  </a>
+  <a routerLink="/gym" routerLinkActive="is-active">
+    <span class="icon"><i class="fas fa-dumbbell"></i></span>
+    <span>{{ labels[lang()].gym }}</span>
+  </a>
+  <a routerLink="/phyto-bar" routerLinkActive="is-active">
+    <span class="icon"><i class="fas fa-glass-cheers"></i></span>
+    <span>{{ labels[lang()].phytoBar }}</span>
+  </a>
+  <a routerLink="/contact" routerLinkActive="is-active">
+    <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+    <span>{{ labels[lang()].contact }}</span>
+  </a>
+</nav>

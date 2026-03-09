@@ -1,0 +1,126 @@
+/* ВЕРХНЯ ПАНЕЛЬ */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: #000;
+  border-bottom: 2px solid var(--primary-orange);
+  z-index: 2000;
+}
+
+.top-bar-content {
+  width: 100%;
+  max-width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Лого зліва, Кнопки справа */
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo strong {
+  font-size: 1.6rem;
+  color: var(--primary-orange);
+  font-weight: 800;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* ДЕСКТОПНЕ МЕНЮ (Всередині хедера) */
+.desktop-nav {
+  display: flex;
+  gap: 25px;
+  margin-left: 50px; /* Відступ від лого */
+  flex-grow: 1; /* Займає вільне місце по центру */
+}
+
+.desktop-nav a {
+  color: #fff;
+  font-weight: 600;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.desktop-nav a:hover, .desktop-nav a.is-active {
+  color: var(--primary-orange);
+}
+
+.top-bar-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.action-btn {
+  background: transparent;
+  border: 2px solid var(--primary-orange);
+  color: var(--primary-orange);
+  height: 44px;
+  min-width: 44px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-btn:hover {
+  background-color: var(--primary-orange);
+  color: #000;
+}
+
+/* МОБІЛЬНА НИЖНЯ ПАНЕЛЬ */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 75px;
+  background-color: #000;
+  border-top: 2px solid var(--primary-orange);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 2000;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.5);
+}
+
+.mobile-bottom-nav a {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.75rem;
+  flex: 1;
+}
+
+.mobile-bottom-nav a .icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+}
+
+.mobile-bottom-nav a.is-active {
+  color: var(--primary-orange);
+}
+
+/* Приховування елементів */
+@media screen and (max-width: 1023px) {
+  .desktop-nav {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo strong {
+    font-size: 1.3rem; /* Трохи менше для вузьких екранів */
+  }
+}

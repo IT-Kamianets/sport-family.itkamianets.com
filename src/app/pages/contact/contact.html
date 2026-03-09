@@ -1,0 +1,43 @@
+<section class="section">
+  <div class="container">
+    <h1 class="title is-2 has-text-centered has-text-orange mb-6">{{ content[lang()].title }}</h1>
+    
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="box has-text-centered p-6" style="border-top: 5px solid var(--primary-orange); background: #111 !important;">
+          <div class="columns is-vcentered">
+            <!-- Address Part -->
+            <div class="column is-6" style="border-right: 1px solid #333;">
+              <span class="icon is-large has-text-orange mb-4">
+                <i class="fas fa-map-marker-alt fa-3x"></i>
+              </span>
+              <h3 class="title is-4 has-text-orange mb-3">{{ content[lang()].addressLabel }}</h3>
+              <p class="is-size-5 has-text-white">{{ content[lang()].address }}</p>
+            </div>
+
+            <!-- Phone Part -->
+            <div class="column is-6">
+              <span class="icon is-large has-text-orange mb-4">
+                <i class="fas fa-phone fa-3x"></i>
+              </span>
+              <h3 class="title is-4 has-text-orange mb-3">{{ content[lang()].phoneLabel }}</h3>
+              <p class="is-size-3 has-text-white has-text-weight-bold">{{ content[lang()].phone }}</p>
+              <a [href]="'tel:' + content[lang()].phone" class="button is-orange is-medium mt-4">
+                {{ content[lang()].callBtn }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Block -->
+    <div class="columns mt-6">
+      <div class="column is-12">
+        <div class="map-container" style="border: 2px solid #333; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.5);">
+          <iframe src="https://www.google.com/maps?q=SPORT+FAMILY+Kamianets-Podilskyi+Ivana+Mazepy+44a&output=embed" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
