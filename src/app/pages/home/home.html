@@ -1,4 +1,4 @@
-<section class="hero is-medium is-bold" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/gym_hero.jpg') center/cover;">
+<section class="hero is-medium is-bold" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/gym_hero.jpg') center/cover;">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-1 has-text-orange">
@@ -81,7 +81,7 @@
     <div class="columns is-multiline">
       <div class="column is-3" *ngFor="let i of galleryImages">
          <figure class="image is-square">
-           <img [src]="'/assets/instagram/insta_' + i + '.jpg'" 
+           <img [src]="'assets/instagram/insta_' + i + '.jpg'" 
                 style="border-radius: 8px; filter: grayscale(20%); object-fit: cover;"
                 onerror="this.parentElement.parentElement.style.display='none'">
          </figure>

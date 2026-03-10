@@ -1,4 +1,4 @@
-<section class="hero is-medium is-dark" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('/assets/phyto_bar.jpg') center/cover;">
+<section class="hero is-medium is-dark" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('assets/phyto_bar.jpg') center/cover;">
   <div class="hero-body">
     <div class="container has-text-centered">
       <h1 class="title is-1 has-text-orange">{{ content[lang()].title }}</h1>
@@ -16,9 +16,9 @@
       </div>
       <div class="column is-5">
         <figure class="image is-4by3">
-          <img src="/assets/phyto/phyto_0.jpg" alt="Sport nutrition" 
+          <img src="assets/phyto/phyto_0.jpg" alt="Sport nutrition" 
                style="border-radius: 12px; border: 2px solid var(--primary-orange); object-fit: cover;"
-               onerror="this.src='/assets/phyto_bar.jpg'">
+               onerror="this.src='assets/phyto_bar.jpg'">
         </figure>
       </div>
     </div>
@@ -58,7 +58,7 @@
     <div class="columns is-multiline">
       <div class="column is-3" *ngFor="let i of galleryImages">
          <figure class="image is-square">
-           <img [src]="'/assets/phyto/phyto_' + i + '.jpg'" 
+           <img [src]="'assets/phyto/phyto_' + i + '.jpg'" 
                 style="border-radius: 8px; filter: grayscale(10%); object-fit: cover;"
                 onerror="this.parentElement.parentElement.style.display='none'">
          </figure>

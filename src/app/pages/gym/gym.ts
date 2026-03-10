@@ -23,19 +23,19 @@ export class GymComponent {
         { 
           name: 'Анна Козік', 
           role: 'Персональний тренер', 
-          image: '/assets/instructors/543271045_18363557665155917_8278424442488837340_n.jpg',
+          image: 'assets/instructors/543271045_18363557665155917_8278424442488837340_n.jpg',
           handle: 'shunshula689'
         },
         { 
           name: 'Микола Кухар', 
           role: 'Тренер', 
-          image: '/assets/instructors/544118532_18363557638155917_9173790684900789418_n.jpg',
+          image: 'assets/instructors/544118532_18363557638155917_9173790684900789418_n.jpg',
           handle: 'kukhar_mykola'
         },
         { 
           name: 'Тарас Бойко', 
           role: 'Тренер', 
-          image: '/assets/instructors/544799252_18363557674155917_6970515046304001255_n.jpg',
+          image: 'assets/instructors/544799252_18363557674155917_6970515046304001255_n.jpg',
           handle: 't_boyko_4'
         }
       ],
@@ -80,19 +80,19 @@ export class GymComponent {
         { 
           name: 'Anna Kozik', 
           role: 'Personal Trainer', 
-          image: '/assets/instructors/543271045_18363557665155917_8278424442488837340_n.jpg',
+          image: 'assets/instructors/543271045_18363557665155917_8278424442488837340_n.jpg',
           handle: 'shunshula689'
         },
         { 
           name: 'Mykola Kukhar', 
           role: 'Trainer', 
-          image: '/assets/instructors/544118532_18363557638155917_9173790684900789418_n.jpg',
+          image: 'assets/instructors/544118532_18363557638155917_9173790684900789418_n.jpg',
           handle: 'kukhar_mykola'
         },
         { 
           name: 'Taras Boyko', 
           role: 'Trainer', 
-          image: '/assets/instructors/544799252_18363557674155917_6970515046304001255_n.jpg',
+          image: 'assets/instructors/544799252_18363557674155917_6970515046304001255_n.jpg',
           handle: 't_boyko_4'
         }
       ],
