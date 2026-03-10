@@ -31,6 +31,8 @@ jobs:
         run: |
           cp dist/sport-family-site/browser/index.html dist/sport-family-site/browser/404.html
           touch dist/sport-family-site/browser/.nojekyll
+          echo "Listing files in deployment folder:"
+          ls -R dist/sport-family-site/browser
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
